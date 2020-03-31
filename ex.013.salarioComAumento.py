@@ -1,0 +1,8 @@
+salario = float(input('Digite o salário do funcionário: R$ '))
+aumento = float(input('Digite o aumento (%): '))
+valorAumento = salario * (aumento / 100)
+salarioFinal = salario + salario * (aumento / 100)
+print('-' * 34)
+print('Valor do salário atual: R$ {:.2f}'.format(salario))
+print('Valor aumento de {}%: R$ {:.2f}'.format(aumento, valorAumento))
+print('Valor final do salário: R$ {:.2f}'.format(salarioFinal))
