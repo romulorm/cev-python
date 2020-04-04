@@ -1,4 +1,5 @@
 from ex115.menu import cabecalho
+from time import sleep
 
 def arquivoExiste(arquivo):
     try:
@@ -26,8 +27,13 @@ def lerArquivo(arquivo):
     except FileNotFoundError:
         print('Erro ao ler o arquivo!')
     else:
-        cabecalho('\33[36mPessoas cadastradas\33[m', 30)
-        print('\33[35m{}\33[m'.format(a.read()))
+        cabecalho('\33[36mPessoas cadastradas\33[m')
+        for linha in a:
+            dado = linha.split(';')
+            dado[1] = dado[1].replace('\n', '')
+            print('{:<30}{:3>} anos'.format(dado[0], dado[1]))
+    finally:
+        a.close()
 
 
 def cadastrarPessoa(arquivo, nome, idade):
@@ -37,5 +43,8 @@ def cadastrarPessoa(arquivo, nome, idade):
         print('Erro ao cadastrar a pessoa!')
     else:
         a.writelines(f'{nome};{idade}\n')
+        print('\33[33mPessoa cadastrada com sucesso!\33[m')
+        sleep(1)
+    finally:
         a.close()
 

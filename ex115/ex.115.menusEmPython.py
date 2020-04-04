@@ -12,9 +12,9 @@ while True:
         lerArquivo(arq)
     elif resposta == 2:
         cabecalho('Cadastrar pessoa')
-        n = input('Nome: ')
-        i = input('Idade: ')
-        cadastrarPessoa(arq, n, i)
+        name = str(input('Nome: '))
+        age = leiaInt('Idade: ')
+        cadastrarPessoa(arq, name, age)
     elif resposta == 3:
         print('\33[31mFinalizando programa! Até logo!\33[m')
         break
