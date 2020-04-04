@@ -1,0 +1,5 @@
+msg = str(input('Número ponto flutuante: '))
+numf = msg.replace(',', '.')
+print(numf)
+n = float(numf)
+print(n)
