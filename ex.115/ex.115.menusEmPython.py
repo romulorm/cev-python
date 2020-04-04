@@ -1,4 +1,7 @@
 import menu
 
-opt = valida(1)
+while True:
+    resposta = menu.siscad(['Pessoas cadastradas', 'Cadastrar pessoas', 'Finalizar programa'])
+    if resposta == 1:
+
 

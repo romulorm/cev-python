@@ -1,12 +1,28 @@
-def linha(tamanho=30 ):
-    print('-' * tamanho)
+def linha(tamanho=40 ):
+    return '-' * tamanho
 
-def valida(opcao):
-    print('Digite a opção:\n'
-          '1) Ver pessoas cadastrados\n'
-          '2) Cadastrar pessoas\n'
-          '3) Finalizar programa')
-    opcao = (input())
-    while opcao not in '123':
-        print('Opção inválida!')
-    if opcao == 1:
+
+def cabecalho(txt):
+    print(linha())
+    print(txt.center(40))
+    print(linha())
+
+
+def leiaInt(num):
+    try:
+        int(num)
+    except(TypeError, ValueError):
+        print('Digite uma opção válida!')
+    else:
+        return num
+
+
+def siscad(lista):
+    cabecalho('SISTEMA DE CADASTRO DE PESSOAS')
+    cont = 1
+    for item in lista:
+        print('{} - {}'.format(cont, item))
+        cont += 1
+    opcao = leiaInt('Sua opção: ')
+    print(linha())
+
