@@ -1,7 +1,5 @@
 from urllib import request
 from datetime import datetime
-from time import sleep
-
 
 def verificaArquivo(arquivo):
     try:
